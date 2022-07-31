@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/zadanie-rekrutacyjne/static/css/main.31d6cfe0.css",
+    "main.js": "/zadanie-rekrutacyjne/static/js/main.4e40a600.js",
+    "static/js/787.86cddd1f.chunk.js": "/zadanie-rekrutacyjne/static/js/787.86cddd1f.chunk.js",
+    "index.html": "/zadanie-rekrutacyjne/index.html",
+    "main.4e40a600.js.map": "/zadanie-rekrutacyjne/static/js/main.4e40a600.js.map",
+    "787.86cddd1f.chunk.js.map": "/zadanie-rekrutacyjne/static/js/787.86cddd1f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.4e40a600.js"
+  ]
+}
