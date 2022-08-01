@@ -1,16 +1,5 @@
-import { Dispatch, SetStateAction } from 'react';
 import Recipe from './Recipe';
-
-interface RecipeInterface {
-  id: string;
-  title: string;
-  description: string;
-  dateAdded: string;
-}
-interface Props {
-  recipeList: RecipeInterface[];
-  setRecipeList: any;
-}
+import { Props, RecipeInterface } from '../interface';
 
 const RecipeList = ({ recipeList, setRecipeList }: Props) => {
   const recipeListRender = recipeList.map(

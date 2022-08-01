@@ -1,24 +1,18 @@
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import EditRecipe from './EditRecipe';
-
-import { faEdit, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { RecipeInterface } from '../interface';
 
 import '../styles/Recipe.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-interface RecipeInterface {
-  id: string;
-  title: string;
-  description: string;
-  dateAdded: string;
-}
 interface Props {
   id: string;
   title: string;
   description: string;
   dateAdded: string;
   recipeList: RecipeInterface[];
-  setRecipeList: any;
+  setRecipeList: Dispatch<SetStateAction<RecipeInterface[]>>;
 }
 const Recipe = ({
   id,
@@ -46,9 +40,7 @@ const Recipe = ({
           <button
             className="recipe__button recipe__button--delete"
             onClick={() => {
-              const filterList = recipeList.filter(
-                (item: any) => item.id !== id
-              );
+              const filterList = recipeList.filter(item => item.id !== id);
               setRecipeList(filterList);
               window.localStorage.setItem(
                 'recipeList',

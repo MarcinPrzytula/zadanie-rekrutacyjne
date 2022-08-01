@@ -1,22 +1,14 @@
-/* eslint-disable array-callback-return */
 import { Dispatch, SetStateAction, useState } from 'react';
 import Modal from 'react-modal';
-
+import { RecipeInterface } from '../interface';
 import '../styles/EditRecipe.scss';
-
-interface RecipeInterface {
-  id: string;
-  title: string;
-  description: string;
-  dateAdded: string;
-}
 
 interface Props {
   showEditModal: boolean;
   setShowEditModal: Dispatch<SetStateAction<boolean>>;
   recipeId: string;
   recipeList: RecipeInterface[];
-  setRecipeList: any;
+  setRecipeList: Dispatch<SetStateAction<RecipeInterface[]>>;
 }
 
 const EditRecipe = ({
@@ -26,11 +18,14 @@ const EditRecipe = ({
   recipeList,
   setRecipeList,
 }: Props) => {
-  const editedRecite = recipeList.find(item => item.id === recipeId);
+  const [editedRecite] = useState(
+    recipeList.find(item => item.id === recipeId)
+  );
 
   const [description, setDescription] = useState(
     editedRecite?.description || ''
   );
+
   const [title, setTitle] = useState(editedRecite?.title || '');
 
   const editRecipe = () => {
@@ -48,7 +43,6 @@ const EditRecipe = ({
         dateAdded,
       };
     });
-
     setRecipeList(editedRecipeList);
     window.localStorage.setItem('recipeList', JSON.stringify(editedRecipeList));
   };
@@ -91,8 +85,9 @@ const EditRecipe = ({
             e.preventDefault();
             if (description.length > 0 && title.length > 0) {
               editRecipe();
-              setDescription('');
-              setTitle('');
+
+              //   setDescription('');
+              //   setTitle('');
               setShowEditModal(false);
             }
           }}

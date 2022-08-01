@@ -1,11 +1,9 @@
 import { useState } from 'react';
+import { Props } from '../interface';
+
 import { v4 as uuidv4 } from 'uuid';
 import '../styles/AddRecipe.scss';
 
-interface Props {
-  recipeList: any;
-  setRecipeList: any;
-}
 const AddRecipe = ({ recipeList, setRecipeList }: Props) => {
   const [description, setDescription] = useState('');
   const [title, setTitle] = useState('');

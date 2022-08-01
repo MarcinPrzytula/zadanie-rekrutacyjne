@@ -2,15 +2,9 @@ import { useState, useEffect } from 'react';
 
 import AddRecipe from './components/AddRecipe';
 import RecipeList from './components/RecipeList';
+import { RecipeInterface } from './interface';
 
 import './styles/App.scss';
-
-interface RecipeInterface {
-  id: string;
-  title: string;
-  description: string;
-  dateAdded: string;
-}
 
 function App() {
   const [recipeList, setRecipeList] = useState<RecipeInterface[]>([
