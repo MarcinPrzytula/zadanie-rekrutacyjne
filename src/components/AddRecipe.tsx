@@ -2,12 +2,6 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import '../styles/AddRecipe.scss';
 
-interface RecipeInterface {
-  id: string;
-  title: string;
-  description: string;
-  dateAdded: string;
-}
 interface Props {
   recipeList: any;
   setRecipeList: any;

@@ -5,8 +5,15 @@ import RecipeList from './components/RecipeList';
 
 import './styles/App.scss';
 
+interface RecipeInterface {
+  id: string;
+  title: string;
+  description: string;
+  dateAdded: string;
+}
+
 function App() {
-  const [recipeList, setRecipeList] = useState([
+  const [recipeList, setRecipeList] = useState<RecipeInterface[]>([
     {
       title: ' Traditional cheesecake',
       dateAdded: 'Mon, 01 Aug 2022 14:58:19 GMT',

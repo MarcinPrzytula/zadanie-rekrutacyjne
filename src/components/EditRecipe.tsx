@@ -26,8 +26,12 @@ const EditRecipe = ({
   recipeList,
   setRecipeList,
 }: Props) => {
-  const [description, setDescription] = useState('');
-  const [title, setTitle] = useState('');
+  const editedRecite = recipeList.find(item => item.id === recipeId);
+
+  const [description, setDescription] = useState(
+    editedRecite?.description || ''
+  );
+  const [title, setTitle] = useState(editedRecite?.title || '');
 
   const editRecipe = () => {
     const editedRecipeList = recipeList.map(currentStateElement => {
@@ -44,6 +48,7 @@ const EditRecipe = ({
         dateAdded,
       };
     });
+
     setRecipeList(editedRecipeList);
     window.localStorage.setItem('recipeList', JSON.stringify(editedRecipeList));
   };
