@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 
-const EditRecipe = props => {
-  const { showEditModal, setShowEditModal, id, recipeList, setRecipeList } =
-    props;
-
+const EditRecipe = ({
+  showEditModal,
+  setShowEditModal,
+  recipeId,
+  recipeList,
+  setRecipeList,
+}) => {
   const [description, setDescription] = useState('');
   const [title, setTitle] = useState('');
 
   const editRecipe = () => {
     setRecipeList(
       recipeList.map(currentStateElement => {
-        if (currentStateElement.id !== props.id) {
+        if (currentStateElement.id !== recipeId) {
           return currentStateElement;
         }
 

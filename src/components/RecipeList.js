@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 
 import Recipe from './Recipe';
 
-const RecipeList = props => {
-  const recipeList = props.recipeList.map(
+const RecipeList = ({ recipeList, setRecipeList }) => {
+  console.log(recipeList);
+  const recipeListRender = recipeList.map(
     ({ id, title, description, dateAdded }) => {
       return (
         <Recipe
@@ -12,14 +13,14 @@ const RecipeList = props => {
           title={title}
           description={description}
           dateAdded={dateAdded}
-          recipeList={props.recipeList}
-          setRecipeList={props.setRecipeList}
+          recipeList={recipeList}
+          setRecipeList={setRecipeList}
         />
       );
     }
   );
 
-  return <div> {recipeList}</div>;
+  return <div> {recipeListRender}</div>;
 };
 
 export default RecipeList;

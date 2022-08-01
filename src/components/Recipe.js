@@ -38,7 +38,7 @@ const Recipe = props => {
           setShowEditModal={setShowEditModal}
           setRecipeList={props.setRecipeList}
           recipeList={props.recipeList}
-          id={id}
+          recipeId={id}
         />
       </div>
     </>

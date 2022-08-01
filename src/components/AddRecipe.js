@@ -36,9 +36,11 @@ const AddRecipe = props => {
         <button
           onClick={e => {
             e.preventDefault();
-            props.setRecipeList([...props.recipeList, recipe]);
-            setDescription('');
-            setTitle('');
+            if (description.length > 0 && title.length > 0) {
+              props.setRecipeList([...props.recipeList, recipe]);
+              setDescription('');
+              setTitle('');
+            }
           }}
         >
           Add recipe
