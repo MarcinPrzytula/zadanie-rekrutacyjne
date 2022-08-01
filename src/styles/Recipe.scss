@@ -1,0 +1,25 @@
+.modal {
+  width: 70%;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.921);
+  overflow-y: scroll;
+  text-align: center;
+
+  &__user-rate {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 25px;
+  }
+
+  &__rating {
+    text-align: start;
+    margin: 20px 5px;
+    max-height: 150px;
+    overflow-y: scroll;
+    word-wrap: break-word;
+  }
+}

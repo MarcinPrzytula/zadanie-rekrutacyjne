@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import AddPhoto from './components/AddPhoto';
-import PhotosList from './components/PhotosList';
+import AddRecipe from './components/AddRecipe';
+import RecipeList from './components/RecipeList';
 
-import './style/App.scss';
+import './styles/App.scss';
 
 function App() {
-  const [photo, setPhoto] = useState([]);
+  const [recipeList, setRecipeList] = useState([]);
 
   return (
     <>
-      <div>Galeria zdjęć z możliwością oceny</div>
-      <AddPhoto add={setPhoto} photo={photo} />
-      <PhotosList delete={setPhoto} photo={photo} />
+      <div>Recipe List</div>
+      <div>You have added {recipeList.length} recipes</div>
+      <AddRecipe setRecipeList={setRecipeList} recipeList={recipeList} />
+      <RecipeList setRecipeList={setRecipeList} recipeList={recipeList} />
     </>
   );
 }
