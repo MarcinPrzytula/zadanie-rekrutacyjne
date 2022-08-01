@@ -1,25 +1,59 @@
-.modal {
-  width: 70%;
-  height: 400px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.921);
-  overflow-y: scroll;
-  text-align: center;
+.recipe {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid grey;
 
-  &__user-rate {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 25px;
+  &__content-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
   }
 
-  &__rating {
-    text-align: start;
-    margin: 20px 5px;
-    max-height: 150px;
-    overflow-y: scroll;
+  &__buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  &__data {
+    font-size: 14px;
+    font-style: italic;
+    & span {
+      font-weight: bold;
+    }
+  }
+
+  &__description {
+    overflow-y: auto;
     word-wrap: break-word;
+    max-height: 100px;
+    margin-top: 15px;
+    font-size: 20px;
+  }
+  &__button {
+    margin-left: 5px;
+    font-size: 25px;
+    font-weight: 500;
+    background-color: unset;
+    border: none;
+    cursor: pointer;
+
+    &--delete {
+      color: rgb(149, 27, 27);
+    }
+
+    &--edit {
+      color: rgb(194, 138, 33);
+    }
   }
 }

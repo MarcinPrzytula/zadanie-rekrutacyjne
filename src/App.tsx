@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import AddRecipe from './components/AddRecipe';
 import RecipeList from './components/RecipeList';
@@ -9,21 +9,17 @@ function App() {
   const [recipeList, setRecipeList] = useState([]);
 
   useEffect(() => {
-    const localStorage = JSON.parse(window.localStorage.getItem('recipeList'));
-    setRecipeList(localStorage);
+    const localStorage = window.localStorage.getItem('recipeList');
+    if (typeof localStorage === 'string') {
+      setRecipeList(JSON.parse(localStorage));
+    }
   }, []);
 
-  useEffect(() => {
-    window.localStorage.setItem('recipeList', JSON.stringify(recipeList));
-  }, [recipeList]);
-
   return (
-    <>
-      <div>Recipe List</div>
-      <div>You have added {recipeList ? recipeList.length : 0} recipes</div>
+    <div className="app">
       <AddRecipe setRecipeList={setRecipeList} recipeList={recipeList} />
       <RecipeList setRecipeList={setRecipeList} recipeList={recipeList} />
-    </>
+    </div>
   );
 }
 
